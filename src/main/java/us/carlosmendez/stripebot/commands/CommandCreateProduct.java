@@ -14,7 +14,7 @@ public class CommandCreateProduct extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
         String[] args = e.getMessage().getContentRaw().split(" ");
 
-        if (!args[0].equalsIgnoreCase(BotData.getPrefix() + "createproduct")) return;
+        if (e.getAuthor().isBot() || !args[0].equalsIgnoreCase(BotData.getPrefix() + "createproduct")) return;
 
         if (args.length < 2) {
             e.getChannel().sendMessage("The proper command usage is `" + BotData.getPrefix() + "createproduct <name> [description]`").queue();

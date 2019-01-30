@@ -15,7 +15,7 @@ public class CommandCreatePlan extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
         String[] args = e.getMessage().getContentRaw().split(" ");
 
-        if (!args[0].equalsIgnoreCase(BotData.getPrefix() + "createplan")) return;
+        if (e.getAuthor().isBot() || !args[0].equalsIgnoreCase(BotData.getPrefix() + "createplan")) return;
 
         if (args.length < 7) {
             e.getChannel().sendMessage("The proper command usage is `" + BotData.getPrefix() + "createplan <name> <product> <currency code> <interval> <interval count> <price>`").queue();
