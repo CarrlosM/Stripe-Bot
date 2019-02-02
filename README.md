@@ -4,3 +4,5 @@ I simply created this to show how Stripe would be implemented in Java with a Dis
 
 This relies on the Stripe API without hooking into it directly and having to authorize something on your Stripe account. 
 It uses emails as a sort of "token" for people to redeem their purchased subscriptions. It then ties that Discord user to the email to prevent other people from using their email if it gets leaked.
+
+If you're looking for a standalone bot to allow users to purchase roles, check out https://upgrade.chat
